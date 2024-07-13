@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 import { login } from "@/services/api/authApi";
 import { LoginType, UserType } from "@/lib/types";
 
-type AuthContextType = {
+export type AuthContextType = {
   user: UserType | null;
   handleLogin: ({ username, password }: LoginType) => Promise<void>;
   handleLogout: () => void;
@@ -13,7 +13,9 @@ type AuthContextProviderType = {
   children: React.ReactNode;
 };
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(
+  undefined
+);
 
 export const AuthContextProvider = ({ children }: AuthContextProviderType) => {
   const [user, setUser] = useState<UserType | null>(() => {
