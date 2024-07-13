@@ -1,10 +1,9 @@
-import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 
-import App from "./src/App";
-import { AuthContext, AuthContextType } from "./src/context/AuthContext";
+import App from "./App";
+import { AuthContext, AuthContextType } from "./context/AuthContext";
 
 // Mock data
 const mockUser = {
